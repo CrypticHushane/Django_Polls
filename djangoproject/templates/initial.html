@@ -1,0 +1,16 @@
+{% if output %}
+
+<ul>
+    {% for question in output %}
+    <li>
+        <h1>
+            <a href="{% url 'djangoapp:detail' question.id%}"
+                >{{ question.question_text }}</a
+            >
+        </h1>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No polls are available.</p>
+{% endif %}
