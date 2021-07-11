@@ -1,4 +1,4 @@
-<button type="button"><a href="/">Go Back home</a></button>
+<button type="button"><a href="/polls">Go Back home</a></button>
 
 <form action="{% url 'djangoapp:vote' question.id %}" method="post">
     {% csrf_token %}
