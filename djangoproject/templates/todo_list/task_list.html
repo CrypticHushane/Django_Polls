@@ -1,7 +1,26 @@
+{% if request.user.is_authenticated %}
+    <h1>{{ request.user.username }}</h1>
+    <h1><a href="{% url 'logout' %}">Logout</a></h1>
+
+    
+{% else %}
+    <h1><a href="{% url 'login' %}">Login</a></h1>
+{% endif %}
+
+
+<hr>
 <h1>My ToDo List</h1>
+
+
+<form method="GET">
+    <input type='text' name='search-area' value="{{search}}"/>
+    <input type="submit" value="Search" />
+</form>
 
 <button><a href="{% url 'createTask' %}">Add New Task</a></button>
 
+
+<h3>You have {{count}} uncompleted tasks.</h3>
 <table>
     <tr>
         <th>Item</th>
@@ -13,6 +32,7 @@
             <td>{{task.title}}</td>
             <td><a href=" {% url 'task' task.id %} ">View</a></td>
             <td><a href=" {% url 'updateTask' task.id %} ">Edit</a></td>
+            <td><a href=" {% url 'deleteTask' task.id %} ">Delete</a></td>
         </tr>
         {% empty %}
         <h2>No Tasks to display</h2>
