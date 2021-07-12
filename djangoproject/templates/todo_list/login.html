@@ -1,11 +1,20 @@
-<h1>Login</h1>
+{% extends 'todo_list/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <h1>Login</h1>
+</div>
 
-<form  method="post">
-{% csrf_token %}
-{{ form.as_p}}
-<input type="submit" value="Login" />
+<div style="padding:20px">
+    <form  method="post">
+        {% csrf_token %}
 
-</form>
+        {{ form.as_p}}
+        <input class="button" type="submit" value="Login" />
+    </form>
+    <p class="label">Dont have an account? <a href="{% url 'register' %}">Register</a></p>
+</div>
 
 
-<p>Dont have an account? <a href="{% url 'register' %}">Register</a></p>
+
+
+{% endblock content %}
