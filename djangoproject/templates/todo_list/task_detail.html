@@ -1,7 +1,10 @@
+{% extends 'todo_list/main.html' %}
+{% block content %}
 <h1>My Task</h1>
 <br><br><br>
 <h1>Title: {{task.title}}</h1>
 <br>
 <h2>Description: {{task.description}}</h2>
 <br><br><br>
-<button><a href="{% url 'tasks' %}">Home</a></button>'
+<button><a href="{% url 'tasks' %}">Home</a></button>
+{% endblock content %}
