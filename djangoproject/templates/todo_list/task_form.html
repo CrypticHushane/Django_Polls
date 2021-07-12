@@ -1,0 +1,10 @@
+<button><a href="{% url 'tasks' %}">Home</a></button>
+<br><br><br>
+<form action="" method="post">
+    {% csrf_token %}
+    <fieldset>
+        {{ form.as_p}}
+    </fieldset>
+    <br><br><br>
+    <input type="submit" value="Save" />
+</form>
