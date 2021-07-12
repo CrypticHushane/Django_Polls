@@ -1,0 +1,9 @@
+<h1>Delete Page</h1>
+<button><a href="{% url 'tasks' %}">Home</a></button>
+
+<form method="post">
+    {% csrf_token %}
+    <br><br><br>
+    <p>You sure you wanna delete this task? "{{task}}"</p>
+    <input type="submit" value="Delete" />
+</form>
